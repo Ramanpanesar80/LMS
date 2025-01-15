@@ -1,28 +1,42 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./CreateCourses.css";
 import { getAuth, signOut } from "firebase/auth";
+import { db } from "../../firebase";
+import { collection, addDoc } from "firebase/firestore";
+import "./CreateCourses.css";
 
-const CreateCourse = ({ addCourse }) => {
+const CreateCourse = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [imageFile, setImageFile] = useState(null);
-  const [teacher, setTeacher] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
-  const handleCreateCourse = (e) => {
+  const handleCreateCourse = async (e) => {
     e.preventDefault();
-    if (title && description && imageFile && teacher) {
-      const newCourse = {
-        title,
-        description,
-        image: URL.createObjectURL(imageFile),
-        teacher,
-      };
 
-      addCourse(newCourse);
-      alert("The course has been successfully added to the list of courses.");
-      navigate("/listofcourses"); 
+    if (title && description && imageFile) {
+      setIsSubmitting(true);
+      try {
+       
+        const imageURL = URL.createObjectURL(imageFile);
+
+       
+        await addDoc(collection(db, "courses"), {
+          title,
+          description,
+          image: imageURL,
+          createdAt: new Date(),
+        });
+
+        alert("The course has been successfully added!");
+        navigate("/view-course");
+      } catch (error) {
+        console.error("Error creating course:", error);
+        alert("There was an error creating the course. Please try again.");
+      } finally {
+        setIsSubmitting(false);
+      }
     } else {
       alert("Please fill out all fields to create a course.");
     }
@@ -84,7 +98,7 @@ const CreateCourse = ({ addCourse }) => {
               required
             />
           </label>
-          <label className="p">
+          <label>
             Description:
             <textarea
               value={description}
@@ -107,8 +121,12 @@ const CreateCourse = ({ addCourse }) => {
               <img src={URL.createObjectURL(imageFile)} alt="Course Preview" />
             </div>
           )}
-          <button type="submit" className="button create">
-            Create Course
+          <button
+            type="submit"
+            className="button create"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Creating..." : "Create Course"}
           </button>
         </form>
       </div>
