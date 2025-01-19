@@ -1,77 +1,108 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { app } from "../firebase"; 
-import './AdminLogin.css';
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { getAuth, signOut, listUsers } from "firebase/auth";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+import "./AdminDash.css";
 
-import Navbar from "./Navbar";
-
-const AdminLogin = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-
+const AdminDashboard = () => {
   const navigate = useNavigate();
-  const auth = getAuth(app);
+  const auth = getAuth();
+  const db = getFirestore();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+  const [users, setUsers] = useState([]);
+  const [teachers, setTeachers] = useState([]);
+  const [newUser, setNewUser] = useState({ email: "", role: "" });
 
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user; 
-      setError("");
-      alert("Login successful!");
-      navigate("/dashboard", { state: { userEmail: user.email } });
-    } catch (error) {
-      if (error.code === "auth/user-not-found") {
-        setError("No user found with this email.");
-      } else if (error.code === "auth/wrong-password") {
-        setError(" ");
-      } else {
-        setError("Invalid Username or Password.");
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const userSnapshot = await getDocs(collection(db, "users"));
+        const teacherSnapshot = await getDocs(collection(db, "teachers"));
+
+        const usersData = userSnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        const teachersData = teacherSnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        setUsers(usersData);
+        setTeachers(teachersData);
+      } catch (error) {
+        console.error("Error fetching users and teachers:", error);
       }
+    };
+
+    fetchUsers();
+  }, [db]);
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      navigate("/");
+    } catch (error) {
+      console.error("Error signing out:", error);
     }
   };
 
   return (
-    <>
-      <Navbar />
-      <div className="login-container">
-        <div className="login-form">
-          <h2>Admin Login</h2>
-          <form onSubmit={handleLogin}>
-            <div className="input-group">
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div className="input-group">
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-              
-            </div>
-            {error && <p className="error">{error}</p>}
-            <p1>
-              <a href="/forgot-password">Forgot password?</a>
-            </p1>
-            <button type="submit">Login</button>
-          </form>
-          
-         
+    <div className="container">
+      <header className="header">
+        <h1>Admin Dashboard</h1>
+        <div className="button-container">
+          <button className="button logout" onClick={handleSignOut}>
+            Sign Out
+          </button>
         </div>
-      </div>
-    </>
+      </header>
+
+      <nav className="sidebar">
+        <ul>
+          <li><Link to="/manage-users">Manage Users</Link></li>
+          <li><Link to="/reports">Reports</Link></li>
+          <li><Link to="/notifications">Notifications</Link></li>
+        </ul>
+      </nav>
+
+      <main className="content">
+        <h2 className="heading">Manage Users</h2>
+
+        <div className="user-management">
+          <h3>Teachers</h3>
+          <div className="user-list">
+            {teachers.map((teacher) => (
+              <div key={teacher.id} className="user-card">
+                <h4>{teacher.name}</h4>
+                <p>Email: {teacher.email}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="user-management">
+          <h3>Students</h3>
+          <div className="user-list">
+            {users.map((user) => (
+              <div key={user.id} className="user-card">
+                <h4>{user.name}</h4>
+                <p>Email: {user.email}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </main>
+
+      <footer className="footer1">
+        <a href="#" className="footer-link">About Us</a>
+        <a href="#" className="footer-link">Privacy Policy</a>
+        <a href="#" className="footer-link">Terms and Conditions</a>
+        <a href="#" className="footer-link">Contact Us</a>
+      </footer>
+    </div>
   );
 };
 
-export default AdminLogin;
+export default AdminDashboard;
