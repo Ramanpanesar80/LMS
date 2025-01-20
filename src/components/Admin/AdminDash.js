@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { getAuth, signOut, listUsers } from "firebase/auth";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getAuth, createUserWithEmailAndPassword, signOut } from "firebase/auth";
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore";
 import "./AdminDash.css";
 
 const AdminDashboard = () => {
@@ -10,34 +10,67 @@ const AdminDashboard = () => {
   const db = getFirestore();
 
   const [users, setUsers] = useState([]);
-  const [teachers, setTeachers] = useState([]);
-  const [newUser, setNewUser] = useState({ email: "", role: "" });
+  const [newUser, setNewUser] = useState({ email: "", password: "", role: "" });
 
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const userSnapshot = await getDocs(collection(db, "users"));
-        const teacherSnapshot = await getDocs(collection(db, "teachers"));
-
         const usersData = userSnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
-
-        const teachersData = teacherSnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-
         setUsers(usersData);
-        setTeachers(teachersData);
       } catch (error) {
-        console.error("Error fetching users and teachers:", error);
+        console.error("Error fetching users:", error);
       }
     };
 
     fetchUsers();
-  }, [db]);
+  }, []);
+
+  const handleCreateUser = async (e) => {
+    e.preventDefault();
+
+    if (!newUser.email || !newUser.password || !newUser.role) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    try {
+      // Step 1: Create the user in Firebase Authentication
+      const userCredential = await createUserWithEmailAndPassword(auth, newUser.email, newUser.password);
+      const createdUser = userCredential.user;
+
+      // Step 2: Add user details to Firestore
+      await addDoc(collection(db, "users"), {
+        uid: createdUser.uid,
+        email: newUser.email,
+        role: newUser.role,
+        createdAt: new Date(),
+      });
+
+      alert("User created successfully!");
+      setNewUser({ email: "", password: "", role: "" });
+    } catch (error) {
+      console.error("Error creating user:", error);
+      alert("Failed to create user. Please try again.");
+    }
+  };
+
+  const handleDeleteUser = async (userId) => {
+    if (window.confirm("Are you sure you want to delete this user?")) {
+      try {
+        // Remove user details from Firestore
+        await deleteDoc(doc(db, "users", userId));
+        alert("User deleted successfully.");
+        setUsers(users.filter((user) => user.id !== userId));
+      } catch (error) {
+        console.error("Error deleting user:", error);
+        alert("Failed to delete user. Please try again.");
+      }
+    }
+  };
 
   const handleSignOut = async () => {
     try {
@@ -61,7 +94,7 @@ const AdminDashboard = () => {
 
       <nav className="sidebar">
         <ul>
-          <li><Link to="/manage-users">Manage Users</Link></li>
+          <li><Link to="/admin-dashboard">Manage Users</Link></li>
           <li><Link to="/reports">Reports</Link></li>
           <li><Link to="/notifications">Notifications</Link></li>
         </ul>
@@ -70,25 +103,56 @@ const AdminDashboard = () => {
       <main className="content">
         <h2 className="heading">Manage Users</h2>
 
-        <div className="user-management">
-          <h3>Teachers</h3>
-          <div className="user-list">
-            {teachers.map((teacher) => (
-              <div key={teacher.id} className="user-card">
-                <h4>{teacher.name}</h4>
-                <p>Email: {teacher.email}</p>
-              </div>
-            ))}
-          </div>
+        <div className="create-user-form">
+          <h3>Create New User</h3>
+          <form onSubmit={handleCreateUser}>
+            <label>
+              Email:
+              <input
+                type="email"
+                value={newUser.email}
+                onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
+                required
+              />
+            </label>
+            <label>
+              Password:
+              <input
+                type="password"
+                value={newUser.password}
+                onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
+                required
+              />
+            </label>
+            <label>
+              Role:
+              <select
+                value={newUser.role}
+                onChange={(e) => setNewUser({ ...newUser, role: e.target.value })}
+                required
+              >
+                <option value="">Select Role</option>
+                <option value="teacher">Teacher</option>
+                <option value="student">Student</option>
+              </select>
+            </label>
+            <button type="submit" className="button create-user">Create User</button>
+          </form>
         </div>
 
         <div className="user-management">
-          <h3>Students</h3>
+          <h3>Users</h3>
           <div className="user-list">
             {users.map((user) => (
               <div key={user.id} className="user-card">
-                <h4>{user.name}</h4>
+                <h4>{user.role.charAt(0).toUpperCase() + user.role.slice(1)}</h4>
                 <p>Email: {user.email}</p>
+                <button
+                  className="button delete-user"
+                  onClick={() => handleDeleteUser(user.id)}
+                >
+                  Delete
+                </button>
               </div>
             ))}
           </div>
