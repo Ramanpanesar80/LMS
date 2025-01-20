@@ -1,0 +1,46 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { FaGraduationCap, FaChalkboardTeacher, FaUserShield } from "react-icons/fa";
+import t1Image from "./images/t1.jpg";
+import Navbar from "./Navbar";
+import './Home.css';
+
+const Homepage = () => {
+  return (
+    <>
+      <Navbar />
+      <div className="main-container">
+        <header>
+          <h1>Learning Management System</h1>
+          <p>
+            Platform for creating, managing, delivering, and tracking educational
+            content and learning.
+          </p>
+        </header>
+        
+        <div className="image">
+          <img src={t1Image} alt="Educational Content" />
+        </div>
+        
+        <main>
+          <div className="portals">
+            <Link to="/student" className="portal">
+              <FaGraduationCap className="icon" />
+              Student Portal
+            </Link>
+            <Link to="/educator" className="portal">
+              <FaChalkboardTeacher className="icon" />
+              Educator Portal
+            </Link>
+            <Link to="/admin" className="portal">
+              <FaUserShield className="icon" />
+              Admin Portal
+            </Link>
+          </div>
+        </main>
+      </div>
+    </>
+  );
+};
+
+export default Homepage;
