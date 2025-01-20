@@ -1,0 +1,91 @@
+/* General styles for the login container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f4f8; /* Light background color */
+    padding: 20px;
+    
+  }
+  
+  /* Styles for the login form */
+  .login-form {
+    background: #ffffff; /* White background for the form */
+    padding: 30px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 400px;
+    width: 100%;
+    margin-top:-150px;
+  }
+  
+  /* Form heading */
+  .login-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #0844A4; /* Dark text color */
+    text-align: center;
+  }
+  
+  /* Input group styles */
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    
+    font-size: 16px;
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  
+  
+  /* Submit button */
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #0844A4; /* Blue background */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+ 
+  
+  /* Error message */
+  .error {
+   
+    color: #ff4d4d; /* Red color for errors */
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  /* Links */
+  a {
+    color: #007bff; /* Blue link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Paragraphs */
+  p {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #555555; /* Medium gray for text */
+  }
+  
