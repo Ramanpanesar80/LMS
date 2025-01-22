@@ -1,0 +1,31 @@
+/* Footer Styling */
+.footer1 {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: #00aaff; /* Light blue on hover */
+  }
+  
+  /* Adding spacing between links and a little responsive adjustment */
+  @media (max-width: 768px) {
+    .footer-link {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+  
