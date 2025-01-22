@@ -1,0 +1,171 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(235, 230, 230);
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.sidebar2 {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+.sidebar2 ul {
+  margin-top: 50px;
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar2 li {
+  padding: 4px;
+  text-align: left;
+}
+
+.sidebar2 li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+}
+
+.sidebar2 li a:hover {
+  background-color: #34495e;
+}
+
+.ma {
+  margin-left: 270px;
+  padding: 20px;
+}
+
+.q {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: black;
+margin-left: 800px;
+display: flex; 
+flex-direction: row; 
+align-items: center; 
+justify-content: center;
+ 
+  
+}
+
+
+.syllabus1 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 500px;
+  margin-right: 600px;
+}
+
+.syllabus1 th,
+.syllabus1 td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.syllabus1 th {
+  background-color: #0073e6;
+  color: white;
+}
+
+.syllabus1 tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.syllabus1 tr:hover {
+  background-color: #f1f1f1;
+}
+
+.btn3 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn3:hover {
+  background-color: #45a049;
+}
+
+
+.modal1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-con {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+}
+
+.upload-f {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-f label {
+  margin-bottom: 10px;
+}
+
+.upload-f input[type="file"] {
+  margin-bottom: 20px;
+}
+
+.modal-actions1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btnv,
+.btnk {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.btnv {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btnv:hover {
+  background-color: #45a049;
+}
+
+.btnk {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.btnk:hover {
+  background-color: #ff1a1a;
+}
+
+
+.error-message2 {
+  color: red;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
