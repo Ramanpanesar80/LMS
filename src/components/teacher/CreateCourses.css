@@ -1,0 +1,123 @@
+
+.create-course-container {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+ .sidebar1 {
+    height: 30%;
+    width: 300px;
+    position: fixed;
+   
+  
+  }
+  
+  .sidebar1 ul {
+    list-style: None; 
+    padding-left: 20px; 
+    margin-top: 80px; 
+}
+
+  .sidebar1 li {
+    margin: 10px 0;
+    padding: 10px;
+    cursor: pointer;
+    color: #1f4e79;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .sidebar1 li:hover {
+    background-color: #bdf2f9;
+  }
+  
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .header-right .header-button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-right: 40px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+ 
+  .header-right .header-button:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Form Styles */
+  .create-course-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    margin-left: 420px;
+  }
+  
+  .create-course-form label {
+    display: block;
+    margin-bottom: 5px; 
+    font-weight: bold;
+  }
+  
+  .create-course-form input[type="text"],
+  .create-course-form textarea,
+  .create-course-form input[type="file"] {
+    width: 95%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .create-course-form .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .image-preview {
+    margin: 15px 0;
+    text-align: center;
+  }
+  
+  .image-preview img {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    margin-top: 70px;
+  }
