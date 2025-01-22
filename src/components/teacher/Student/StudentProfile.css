@@ -1,0 +1,89 @@
+/* StudentProfile.css */
+
+/* General container for the profile */
+div {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Profile title */
+h1 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Form input styles */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+/* Textarea specific styling */
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* Button container */
+div > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Profile update and delete buttons */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Styling for update button */
+button:first-child {
+  background-color: #007bff;
+}
+
+button:first-child:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for delete button */
+button:last-child {
+  background-color: #dc3545;
+}
+
+button:last-child:hover {
+  background-color: #c82333;
+}
+
+/* Loading text styling */
+p {
+  text-align: center;
+  font-size: 18px;
+  color: #007BFF;
+}
+
+/* Placeholder text styling */
+input::placeholder,
+textarea::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
