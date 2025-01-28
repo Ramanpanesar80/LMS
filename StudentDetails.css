@@ -1,0 +1,93 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+ 
+.sidebar-doc {
+    width: 200px;
+    background-color: #2c3e50;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    margin-top: 110px;
+  }
+  
+  .sidebar-doc ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar-doc li {
+    margin: 10px 0;
+    padding: 10px;
+  }
+  
+  .sidebar-doc a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar-doc a:hover {
+    background-color: #1abc9c;
+    padding: 8px;
+  }
+  
+  
+
+  .documents {
+    margin-left: 220px;
+    padding: 20px;
+  }
+  
+  .docuh {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .documents-t {
+    width: 50%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: 300px;
+  }
+  
+  .documents-t th,
+  .documents-t td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .documents-t th {
+    background-color: #447cb3;
+    color: white;
+  }
+
+  .footer-docu {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-link-docu {
+    margin: 0 15px;
+    color: white;
+  }
+  
+  .footer-link-docu:hover {
+    text-decoration: underline;
+  }
+  
