@@ -1,0 +1,117 @@
+/* General layout and structure */
+.sy {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.head {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.head h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.button-con {
+  margin-top: 10px;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button1 {
+  background-color: #ff4d4d;
+}
+
+.button1.logout1 {
+  margin-left: 10px;
+}
+
+.button-con a {
+  text-decoration: none;
+}
+
+.main3 {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+}
+
+.main3 h1 {
+  text-align: center;
+  color: #333;
+}
+
+.syllabus-table1 {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.syllabus-table1 th,
+.syllabus-table1 td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.syllabus-table1 th {
+  background-color: #007bff;
+  color: white;
+}
+
+.syllabus-table1 td a {
+  text-decoration: none;
+}
+
+.syllabus-table1 td button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.syllabus-table1 td button:hover {
+  background-color: #218838;
+}
+
+.syllabus-table1 td {
+  vertical-align: middle;
+}
+
+.lm {
+  padding: 20px;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.footer p a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer p a:hover {
+  text-decoration: underline;
+}

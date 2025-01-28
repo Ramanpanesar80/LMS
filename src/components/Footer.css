@@ -1,0 +1,38 @@
+
+.footer1 {
+    background-color: gray;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 0px;
+    
+      display: flex;
+      gap: 300px; /* Adjust the gap as needed */
+    
+    
+    
+  }
+  
+  .footer-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: #00aaff; /* Light blue on hover */
+  }
+  
+  /* Adding spacing between links and a little responsive adjustment */
+  @media (max-width: 768px) {
+    .footer-link {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+  

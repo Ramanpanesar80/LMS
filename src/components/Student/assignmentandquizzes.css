@@ -1,0 +1,189 @@
+
+.sidebar-assignment  {
+  width: 250px;
+  background-color: #2c3e50;
+  margin-top: 78px;
+  position: fixed;
+  height: 85%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.r-ass{
+  margin-top: 20px;
+}
+
+.sidebar-assignment  ul {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 20px;
+  
+}
+
+.sidebar-assignment  li {
+  margin: 15px 0;
+}
+
+.sidebar-assignment li a {
+  text-decoration: none;
+  color: white;
+  
+  display: block;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.sidebar-assignment  li a:hover {
+  background-color: #1abc9c;
+}
+
+.sidebar-assignment  li a:active {
+  background-color: #1abc9c;
+}
+
+.sidebar-assignment  li:first-child {
+  font-size: 18px;
+  color: #ecf0f1;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+.sidebar-assignment li a:focus {
+  outline: none;
+}
+
+.sidebart a {
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .sidebart {
+    width: 200px;
+  }
+}
+
+
+.main-assignment {
+  margin-left: 240px;
+  padding: 20px;
+}
+
+h2.l-ass {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.courses-list-ass {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.course-card-ass {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.3s;
+  flex: 1;
+  max-width: 300px;
+}
+
+.course-card-ass.selected {
+  border: 2px solid #007bff;
+}
+
+.course-card-ass h4 {
+  margin: 0 0 10px 0;
+}
+
+.course-card-ass p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.course-card-ass:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.assignments-list1 {
+  margin-top: 20px;
+}
+
+.assignment-card1 {
+  background-color: #fefefe;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.assignment-card1 p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.submit-assignment1 {
+  margin-top: 20px;
+}
+
+.submit-assignment1 input[type="file"] {
+  margin-bottom: 10px;
+}
+
+.submit-assignment1 button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.submit-assignment1 button:hover {
+  background-color: #0056b3;
+  transition: 0.3s;
+}
+
+.error-message-ass {
+  color: red;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.footer-assignment {
+  background-color: gray;
+  color: white;
+  text-align: left;
+  padding: 15px 0;
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 300px; 
+
+
+}
+
+.footer-assignment .footer-link {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 14px;
+}
+
+.footer-assignment .footer-link:hover {
+  text-decoration: underline;
+  color: #d1e7ff;
+  transition: 0.3s;
+}

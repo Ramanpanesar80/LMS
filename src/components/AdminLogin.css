@@ -1,0 +1,72 @@
+
+
+.Admin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f6f9;
+}
+
+.Admin-form {
+  margin-top: -200px;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  max-width: 400px;
+}
+
+.Adm {
+  text-align: center;
+  color: #0844A4;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.input-group3 {
+  margin-bottom: 15px;
+}
+
+.input-group3 label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.input-group3 input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.input-group3 input:focus {
+  border-color: #007bff;
+}
+
+.error-message3 {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.Admin-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0844A4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.Admin-button:hover {
+  background-color: #0056b3;
+}

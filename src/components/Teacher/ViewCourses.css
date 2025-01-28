@@ -1,0 +1,124 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+
+
+/* Main Content */
+main.view-rr {
+  flex: 1;
+  padding: 20px 40px;
+}
+
+.view-ddd {
+  max-width: 800px;
+  margin: 0 auto;
+   display: flex;
+  flex-wrap: nowrap; 
+}
+
+h2.view-y {
+  font-size: 22px;
+ 
+  color: #333;
+  text-align: center; /* Center align the text */
+   /* Remove any left margin */
+ 
+  margin-top: 50px;
+}
+
+
+
+/* Course Card */
+.view-fff {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 200px;
+  flex-shrink: 0; /* Prevent shrinking */
+  margin-top: 20px;
+  margin-left: 50px;
+  
+
+}
+
+
+.view-fff:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.view-fff h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #007bff;
+}
+
+.view-fff p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+button.b67 {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.b67:hover {
+  background-color: #c0392b;
+}
+
+
+
+
+
+.footer-view{
+  background-color: gray;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 369px;
+  
+    display: flex;
+    gap: 300px; /* Adjust the gap as needed */
+  
+  
+  
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #00aaff; /* Light blue on hover */
+}
+
+/* Adding spacing between links and a little responsive adjustment */
+@media (max-width: 768px) {
+  .footer-link {
+    display: block;
+    margin: 10px 0;
+  }
+}

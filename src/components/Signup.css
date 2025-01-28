@@ -1,0 +1,130 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.signup1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup-form {
+  background-color: white;
+  padding: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  border-radius: 50px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.error-messaget{
+  color: #ff4d4d;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.success-messaget{
+  color: #28a745;
+  text-align: center;
+
+
+}
+
+.date-mobile1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-mobile1 div {
+  width: 48%;
+}
+
+.password-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.password-row div {
+  width: 48%;
+}
+
+.checkboxll {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkboxll input {
+  margin-right: 10px;
+}
+
+.checkboxll a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.checkboxll a:hover {
+  text-decoration: underline;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .signup-form {
+    padding: 30px;
+  }
+}
