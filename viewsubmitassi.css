@@ -1,0 +1,197 @@
+
+
+/* .view-teacher-assignments-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+} */
+
+.sidebar-view {
+  width: 250px;
+  height: 100vh;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 10px;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  margin-top: 110px;
+}
+
+.sidebar-view ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  gap: 5px;
+}
+
+.sidebar-view ul li {
+  margin: 0;
+}
+
+.sidebar-view ul li a {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: block;
+}
+
+.sidebar-view ul li a:hover {
+  background-color: #1abc9c;
+  color: #ffffff;
+}
+
+.sidebar-view ul li a.active {
+  background-color: #1abc9c;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .sidebar-view {
+    width: 200px;
+  }
+
+  .sidebar-view ul li a {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+
+
+
+.main-content-view {
+  flex-grow: 1;
+  padding: 2rem;
+}
+
+.viewh {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  
+}
+
+.courses-list-view {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-left: 300px;
+  margin-top: 50px;
+}
+
+.course-card {
+  background-color: #fff;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: calc(33% - 1rem);
+}
+
+.course-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-card.selected {
+  border-color: #4CAF50;
+}
+
+.assignment-card-view {
+  background-color: #fff;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.viewh3{
+  margin-left: 200px;
+}
+
+.view-pl {
+  margin: 0.5rem 0;
+  margin-left: 300px;
+}
+
+.assignment-card-view a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.assignment-card-view a:hover {
+  text-decoration: underline;
+}
+
+.error-message-view {
+  color: red;
+  font-weight: bold;
+}
+
+.view-m {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.input-grade-feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-grade-feedback input,
+.input-grade-feedback textarea {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.input-grade-feedback button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.input-grade-feedback button:hover {
+  background-color: #45a049;
+}
+
+.footer-view {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-view a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+.footer-view a:hover {
+  text-decoration: underline;
+}
