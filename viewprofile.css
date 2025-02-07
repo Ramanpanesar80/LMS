@@ -1,0 +1,71 @@
+.view-profile-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.list-header-prof {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  border-radius: 10px 10px 0 0;
+}
+
+.profilj {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.profile-picture {
+  margin-top: 20px;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007bff;
+}
+
+.profile-details {
+  margin-top: 20px;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.profile-details p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.profile-actions {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.profile-actions:hover {
+  background-color: #0056b3;
+}
+
+.profile-actions.delete {
+  background-color: #dc3545;
+}
+
+.profile-actions.delete:hover {
+  background-color: #c82333;
+}
