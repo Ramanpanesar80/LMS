@@ -1,0 +1,75 @@
+.admin-dashboard {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .admin-dashboard h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .student-list {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    margin-right: 60px;
+  }
+  
+  table.pl {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  
+  table.pl th,
+  table.pl td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  table.pl th {
+    background-color: #8ea8ef;
+  }
+  
+  button.per {
+    padding: 6px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button.per:hover {
+    background-color: #45a049;
+  }
+  
+ 
+  
+  p {
+    text-align: center;
+    color: #e74c3c;
+  }
+  
+  @media (max-width: 768px) {
+    .admin-dashboard {
+      padding: 15px;
+    }
+  
+    .student-list {
+      width: 100%;
+      margin: 0;
+    }
+  
+    table.pl th,
+    table.pl td {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+  
