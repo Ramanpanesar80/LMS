@@ -1,0 +1,79 @@
+
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  
+  }
+
+  
+  
+  h2 {
+    margin-top: 30px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .appearance-settings {
+    margin-bottom: 30px;
+    background-color: white;
+
+
+   
+  }
+  
+  .lc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: white;
+    
+  }
+  
+  .appearance-settings label {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  select, input[type="color"] {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="color"] {
+    width: 50px;
+    height: 30px;
+  }
+  
+ 
+  .privacy-policy-settings {
+    margin-bottom: 30px;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+ 
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
